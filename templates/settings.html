@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+{% set active_page = "settings" %}
+{% block body %}
+
+<div class="card">
+  <div class="card-header">
+    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-primary btn-lg active">
+      Database settings
+    </a>
+  </div>
+  <div class="card-body">
+   <div id="collapseOne" class="panel-collapse collapse">
+     <form >
+       <div class="form-group">
+         <label for="dbserver">MariaDB/MySQL Server address</label>
+         <input type="text" class="form-control" id="dbserver" placeholder="dbserver" value="dbserver.domain" required>
+
+         <label for="port">Port</label>
+         <input type="text" class="form-control" id="port" placeholder="Port" value="3306" required>
+       </div>
+
+       <div class="form-group">
+         <label for="dbname">Database name</label>
+         <input type="text" class="form-control" id="dbname" placeholder="dbname" value="DBName" required>
+       </div>
+       <div class="form-group">
+         <label for="dbuser">DB Username</label>
+         <input type="text" class="form-control" id="dbuser" placeholder="dbuser" value="DBADMIN" required>
+       </div>
+
+       <div class="form-group">
+         <label for="dbpasswd">DB password</label>
+         <input type="password" class="form-control" id="dbpasswd" placeholder="" value="" required>
+       </div>
+
+
+       <div class="form-group">
+         <button class="btn btn-primary" type="submit">Update DB</button>
+         <button class="btn btn-default" type="button">Test DB</button>
+       </div>
+     </form>
+   </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-header">
+    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="btn btn-primary btn-lg active">
+      Email settings
+    </a>
+  </div>
+  <div class="card-body">
+   <div id="collapseTwo" class="panel-collapse collapse">
+      <form >
+       <div class="form-group">
+         <label for="smtp">SMTP server</label>
+         <input type="text" class="form-control" id="smtp" placeholder="smtp" value="smtp.domain" required>
+
+         <label for="portsmtp">Port</label>
+         <input type="text" class="form-control" id="portsmtp" placeholder="Port" value="25" required>
+       </div>
+
+       <div class="form-group">
+         <label for="smtpaccount">From account</label>
+         <input type="text" class="form-control" id="smtpaccount" placeholder="" value="" required>
+       </div>
+       <div class="form-group">
+         <label for="smtpuser">SMTP Username</label>
+         <input type="text" class="form-control" id="smtpuser" placeholder="" value="" required>
+       </div>
+
+       <div class="form-group">
+         <label for="smtppasswd">DB password</label>
+         <input type="password" class="form-control" id="smtppasswd" placeholder="" value="" required>
+       </div>
+       <div class="form-group">
+         <label for="emailtest">Test E-mail address</label>
+         <input type="text" class="form-control" id="emailtest" placeholder="" value="">
+       </div>
+
+       <div class="form-group">
+         <button class="btn btn-primary" type="submit">Update SMTP server</button>
+         <button class="btn btn-default" type="button">Send test email</button>
+       </div>
+      </form>
+   </div>
+  </div>
+</div>
+{% endblock %}

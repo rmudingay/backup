@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% set active_page = "scripts" %}
+
+{% block body %}
+<div class="card">
+  <div class="card-header">Scripts</div>
+  <div class="card-body">
+
+  <table class="table table-hover">
+    <thread>
+      <th>#</th>
+      <th>Script name</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </thead>
+
+    <tbody>
+      <td>1</td>
+      <td>Triggersnapshot.sh</td>
+      <td>Use this script as pre client and post client script (yes, both).</td>
+      <td>
+        <button type="button" class="btn btn-info">Edit</button>
+        <button type="button" class="btn btn-danger disabled">Delete</button>
+      </td>
+    </tbody>
+  </table>
+   <a class="btn btn-primary button" href="/addscript">
+     Add Script
+   </a>
+</div>
+</div>
+{% endblock %}

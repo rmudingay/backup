@@ -1,0 +1,20 @@
+{% set months = [
+    ('Every month','all'),
+    ('January', 'jan'),
+    ('Febuary','feb'),
+    ('March','mar'),
+    ('April','apr'),
+    ('May','may'),
+    ('June','jun'),
+    ('July','jul'),
+    ('August','aug'),
+    ('September','sep'),
+    ('October','oct'),
+    ('November','nov'),
+    ('December','dec'),
+] -%}
+<div class="form-group">
+  {% for month, num in months  %}
+  <option>{{ month }}</option>
+  {% endfor %}
+</div>

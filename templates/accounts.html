@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+{% set active_page = "accounts" %}
+
+{% block body %}
+<div class="card">
+  <div class="card-header">LDAP Server</div>
+  <div class="card-body">
+
+   <form >
+     <div class="form-group">
+       <div class="form-row">
+         <div class="col-md-6">
+           <label for="ldapserver">LDAP Server address</label>
+           <input type="text" class="form-control" id="ldapserver" placeholder="ldapserver" value="ldapserver.domain" required>
+       </div>
+       <div class="col-md-4">
+         <label for="port">Port</label>
+         <input type="text" class="form-control" id="port" placeholder="Port" value="686" required>
+      </div>
+      <div class="col-md-2">
+         <label class="form-check-label" for="ssl"> Enable SSL</label>
+         <input type="checkbox" class="form-control" id="ssl"/>
+     </div>
+   </div>
+
+   <div class="form-group">
+          <label for="basedn">Base DN</label>
+          <input type="text" class="form-control" id="basedn" placeholder="basedn" value="basedn" required/>
+    </div>
+    <div class="form-row">
+         <div class="col-md-4">
+            <label for="username">LDAP Username</label>
+            <input type="text" class="form-control" id="username" placeholder="username" value="nonadmin.basedn" required>
+       </div>
+
+        <div class="col-md-4">
+            <label for="password">LDAP password</label>
+            <input type="password" class="form-control" id="password" placeholder="password" value="ldapserver.domain" required>
+        </div>
+    </div>
+ </div>
+    <div class="form-group">
+      <div class="form-row">
+         <div class="col-md-6">
+           <button class="btn btn-primary" type="submit">Update LDAP</button>
+        </div>
+        <div class="col-md-6">
+           <button class="btn btn-default" type="button">Test LDAP</button>
+         </div>
+       </div>
+      </div>
+  </form>
+</div>
+</div>
+<div class="card">
+  <div class="card-header">Users</div>
+  <div class="card-body">
+
+  <table class="table table-hover">
+    <thread>
+      <th>#</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Active</th>
+      <th>Actions</th>
+    </thead>
+
+    <tbody>
+      <td>1</td>
+      <td>root</td>
+      <td>none</td>
+      <td>Yes</td>
+      <td>
+        <button type="button" class="btn btn-info">Edit</button>
+        <button type="button" class="btn btn-danger disabled">Delete</button>
+      </td>
+    </tbody>
+  </table>
+   <a class="btn btn-primary button" href="/adduser">
+     Add User
+   </a>
+</div>
+</div>
+{% endblock %}

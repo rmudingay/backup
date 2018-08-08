@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Backup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'bootstrap-4.1.0/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'bootstrap-select.min.css') }}">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{{ url_for('static', filename = 'popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'bootstrap-4.1.0/dist/js/bootstrap.min.js') }}"></script>
+     <script src="{{ url_for('static', filename = 'bootstrap-4.1.0/js/dist/tab.js') }}"></script>
+     <script src="{{ url_for('static', filename = 'bootstrap-select.js') }}"></script>
+     <script src="{{ url_for('static', filename = 'dropdown.js') }}"></script>
+     <script src="{{ url_for('static', filename = 'util.js') }}"></script>
+     <script src="{{ url_for('static', filename = 'tab.js') }}"></script>
+
+  </head>
+  <body>
+    {% include 'includes/_navbar.html' %}
+  <div class="container">
+    {% block body %}{% endblock  %}
+  </div>
+
+  </body>
+</html>

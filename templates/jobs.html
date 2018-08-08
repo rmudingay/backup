@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+{% set active_page = "jobs" %}
+
+{% block body %}
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'dataTables-1.10.16/css/jquery.dataTables.min.css') }}">
+
+<script src="{{ url_for('static', filename = 'dataTables-1.10.16/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'dataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}"></script>
+<script >
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+<div class="card">
+  <div class="card-header">Backup Jobs</div>
+
+  <div class="card-body">
+    <table id="example" class="table table-hover" >
+        <thead>
+            <tr>
+                <th>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  </div>
+                </th>
+                <th>id</th>
+                <th>Name</th>
+                <th>Last action</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <a class="btn btn-primary button" href="/addjob">
+        Add Job
+      </a>
+      <button type="button" class="btn btn-info">Run Jobs</button>
+      <button type="button" class="btn btn-danger">Delete Jobs</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">Backup locations</div>
+    <div class="card-body">
+      <table class="table table-hover">
+          <thead>
+              <tr>
+                  <th>id</th>
+                  <th>Name</th>
+                  <th>Path</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+               <tr>
+                  <td>1</td>
+                  <td>Databases</td>
+                  <td>/cephfs/dbpool/</td>
+                  <td>
+                    <button type="button" class="btn btn-info">Edit</button>
+                    <button type="button" class="btn btn-danger disabled">Delete</button>
+                  </td>
+               </tr>
+          </tbody>
+      </table>
+      <a class="btn btn-primary button" href="/addlocation">
+        Add Location
+      </a>
+    </div>
+  </div>
+
+
+{% endblock %}

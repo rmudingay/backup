@@ -1,0 +1,18 @@
+{% set weekdays = [
+    ('Monday', 'mon'),
+    ('Tuesday','tue'),
+    ('Wednesday','wed'),
+    ('Thursday','thur'),
+    ('Friday','fri'),
+    ('Saturday','sat'),
+    ('Sunday','sun')
+] -%}
+
+  {% for dow, num in weekdays  %}
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="{{ num }}">
+        <label class="form-check-label" for="{{ num }}">
+          {{ dow }}
+        </label>
+      </div>
+  {% endfor %}

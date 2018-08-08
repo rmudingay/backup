@@ -1,0 +1,10 @@
+  <div class="form-group">
+      <label for="dailytime">Select time</label>
+      <select class="form-control selectpicker" id="dailytime" data-live-search="true">
+        {% include 'includes/_time.html' %}
+      </select>
+    </div>
+  <div class="form-group">
+      {%  include "includes/_dayofweek.html" %}
+    </div>
+    {% include 'includes/_copies.html' %}

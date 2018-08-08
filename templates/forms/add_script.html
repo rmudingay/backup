@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% set active_page = "scripts" %}
+
+{% block body %}
+<div class="card">
+  <div class="card-header">Scripts</div>
+  <div class="card-body">
+    <div class="form-group">
+        <label for="descr">Description</label>
+        <textarea class="form-control" id="descr" rows="1" required></textarea>
+      </div>
+    <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Upload script</span>
+    </div>
+    <div class="custom-file">
+      <input type="file" class="custom-file-input" id="script">
+      <label class="custom-file-label" for="script">Choose file</label>
+    </div>
+  </div>
+   <button class="btn btn-primary" type="button">Add Key</button>
+   <a class="btn btn-light button" href="/scripts">Cancel</a>
+</div>
+</div>
+{% endblock %}

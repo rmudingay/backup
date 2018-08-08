@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% set active_page = "policy" %}
+
+{% block body %}
+<div class="card">
+  <div class="card-header">Backup Policies</div>
+  <div class="card-body">
+
+  <table class="table table-hover">
+    <thread>
+      <th>#</th>
+      <th>Name</th>
+      <th>Actions</th>
+    </thead>
+
+    <tbody>
+      <td>1</td>
+      <td>Default</td>
+      <td>
+        <button type="button" class="btn btn-info">Edit</button>
+        <button type="button" class="btn btn-danger disabled">Delete</button>
+      </td>
+    </tbody>
+  </table>
+  <a class="btn btn-primary button" href="/addpolicy">
+    Add Policy
+  </a>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% set active_page = "events" %}
+
+{% block body %}
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'dataTables-1.10.16/css/jquery.dataTables.min.css') }}">
+
+<script src="{{ url_for('static', filename = 'dataTables-1.10.16/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'dataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}"></script>
+<script >
+$(document).ready(function() {
+    $('#logs').DataTable();
+} );
+</script>
+
+<div class="card">
+  <div class="card-header">Log events</div>
+
+  <div class="card-body">
+    <table id="logs" class="table table-hover" >
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Level</th>
+                <th>Source</th>
+                <th>User</th>
+                <th>Message</th>
+                <th>Task</th>
+            </tr>
+        </thead>
+        <tbody>
+          <td>12:03</td>
+          <td>INFO</td>
+          <td>EVENT</td>
+          <td>remymudingay</td>
+          <td>login successful</td>
+          <td>---</td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

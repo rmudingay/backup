@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+{% set active_page = "policy" %}
+
+{% block body %}
+<div class="card">
+  <div class="card-header">Add Policy</div>
+  <div class="card-body">
+
+    <form >
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="policyname">Name</label>
+          <input type="text" class="form-control" id="policyname" placeholder="Name" value="" required>
+        </div>
+        <div class="col-md-6">
+          <div class="col-md-6">
+            Enter the name of the policy. The name should be descriptive (example: hourly, daily, Every 4 hours, etc )
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" id="policytab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" href="#hourly" id="hourlytab" aria-controls="hourly" role="tab" data-toggle="tab" aria-selected="true">Hourly</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#daily" id="daily-tab" aria-controls="daily" role="tab" data-toggle="tab" aria-selected="false">Daily</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#weekly" id="weeklytab" aria-controls="weekly" role="tab" data-toggle="tab" aria-selected="false">Weekly</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#monthly" id="monthlytab" aria-controls="monthly" role="tab" data-toggle="tab" aria-selected="false">Monthly</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#yearly" id="yearlytab" aria-controls="yearly" role="tab" data-toggle="tab" aria-selected="false">Yearly</a>
+            </li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content" id="timeslotstab">
+            <div role="tabpanel" class="tab-pane show active" id="hourly" aria-labelledby="hourlytab">
+
+              {%  include "includes/_hourly.html" %}
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="daily" aria-labelledby="dailytab">
+
+              {%  include "includes/_daily.html" %}
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="weekly" aria-labelledby="weeklytab">
+
+              {%  include "includes/_weekly.html" %}
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="monthly" aria-labelledby="monthlytab">
+
+              {%  include "includes/_monthly.html" %}
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="yearly" aria-labelledby="yearlytab">
+
+              {%  include "includes/_yearly.html" %}
+
+            </div>
+          </div>
+
+      </div>
+      <div class="form-row">
+        <div class="col-md-6">
+          <button class="btn btn-primary" type="submit">Add Policy</button>
+          <a class="btn btn-light button" href="/policy">Cancel</a>
+        </div>
+      </div>
+    </form>
+
+ </div>
+</div>
+{% endblock %}

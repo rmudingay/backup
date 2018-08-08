@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% set active_page = "jobs" %}
+{% block body %}
+<div class="card">
+  <div class="card-header">Add Location</div>
+  <div class="card-body">
+     <form action="">
+       <div class="form-group">
+         <label for="locationname">Name</label>
+         <input type="text" class="form-control" id="locationname" placeholder="locationname" required>
+       </div>
+      <div class="form-group">
+           <label for="path">Path</label>
+            <input type="text" class="form-control" id="path" placeholder="/path/to/backup/location" required>
+      </div>
+      <div class="form-group">
+         <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="nfs">
+            <label class="form-check-label" for="nfs">NFS</label>
+         </div>
+      </div>
+
+       <div class="form-group">
+         <button class="btn btn-primary" type="submit">Save</button>
+         <a class="btn btn-light button" href="/jobs">Cancel</a>
+       </div>
+     </form>
+  </div>
+</div>
+{% endblock %}
